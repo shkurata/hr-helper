@@ -1,0 +1,22 @@
+{
+  "name": "hr-helper",
+  "version": "1.0.0",
+  "description": "A CLI tool to help HR with the payment dates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "[\"payment\"",
+    "\"bonus\"]"
+  ],
+  "bin": {
+    "hr-helper": "./index.js"
+  },
+  "type": "module",
+  "author": "Nikolay Neykov",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
