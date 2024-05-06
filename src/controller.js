@@ -1,6 +1,16 @@
 import { HRDate } from "./hr-date/hr-date.js";
 
-export function calculatePaymentDatesUntilEndYear(locale) {
+/**
+ * Generates an array of monthly payment and bonus dates for the given year
+ * @param {'en-US'|'nl-BE'|'fr-BE'|'de-BE'} locale 
+ * @param {number} bonusDate 
+ * @returns {{
+ *   month: string,
+ *   paymentDay: string,
+ *   bonusDay: string
+ * }[]} The payment and bonus dates
+ */
+export function calculatePaymentDatesUntilEndYear(locale = 'en-US', bonusDate = 15) {
 	const currentYear = new Date().getFullYear();
 	const paymentDates = [];
 	for (let month = new Date().getMonth(); month < 12; month++) {
@@ -9,6 +19,7 @@ export function calculatePaymentDatesUntilEndYear(locale) {
 				year: currentYear,
 				month,
 				locale,
+                bonusDate
 			}),
 		);
 	}

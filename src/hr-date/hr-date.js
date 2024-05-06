@@ -11,7 +11,6 @@ export class HRDate {
 	 * @param {HRDateParams} The date parameters
 	 */
 	constructor({ year, month, day }) {
-		// console.log('year', year, 'month', month, 'day', day);
 		if (year === undefined) {
 			throw new Error('Invalid year');
 		}
