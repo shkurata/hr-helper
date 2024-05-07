@@ -21,7 +21,7 @@
   },
   "type": "module",
   "author": "Nikolay Neykov",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "commander": "^12.0.0",
     "figlet": "^1.7.0",
