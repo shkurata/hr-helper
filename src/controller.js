@@ -1,16 +1,19 @@
-import { HRDate } from "./hr-date/hr-date.js";
+import { HRDate } from './hr-date/hr-date.js';
 
 /**
  * Generates an array of monthly payment and bonus dates for the given year
- * @param {'en-US'|'nl-BE'|'fr-BE'|'de-BE'} locale 
- * @param {number} bonusDate 
+ * @param {'en-US'|'nl-BE'|'fr-BE'|'de-BE'} locale
+ * @param {number} bonusDate
  * @returns {{
  *   month: string,
  *   paymentDay: string,
  *   bonusDay: string
  * }[]} The payment and bonus dates
  */
-export function calculatePaymentDatesUntilEndYear(locale = 'en-US', bonusDate = 15) {
+export function calculatePaymentDatesUntilEndYear(
+	locale = 'en-US',
+	bonusDate = 15,
+) {
 	const currentYear = new Date().getFullYear();
 	const paymentDates = [];
 	for (let month = new Date().getMonth(); month < 12; month++) {
@@ -19,7 +22,7 @@ export function calculatePaymentDatesUntilEndYear(locale = 'en-US', bonusDate = 
 				year: currentYear,
 				month,
 				locale,
-                bonusDate
+				bonusDate,
 			}),
 		);
 	}
@@ -73,7 +76,10 @@ export function getPaymentDatesForMonth({
 			day: 'numeric',
 			weekday: 'long',
 		}),
-		bonusDay: bonusDay.date.toLocaleDateString(locale, { day: 'numeric', weekday: 'long'}),
+		bonusDay: bonusDay.date.toLocaleDateString(locale, {
+			day: 'numeric',
+			weekday: 'long',
+		}),
 	};
 }
 

@@ -14,15 +14,17 @@ program
 	.description('HR manager CLI')
 	.action(() => {
 		console.log('Welcome to HR Manager CLI!\n');
-        console.log('Please answer the following questions to generate the payment dates report.\n');
-        
+		console.log(
+			'Please answer the following questions to generate the payment dates report.\n',
+		);
+
 		inquirer
 			.prompt([
 				{
 					type: 'list',
 					name: 'locale',
 					message: 'Please enter your locale (Enter for default)',
-					choices: ['en-US', 'nl-BE', 'fr-BE', 'de-BE'],
+					choices: ['en-US', 'nl-NL', 'nl-BE', 'fr-BE', 'de-BE'],
 					default: 'en-US',
 				},
 				{
